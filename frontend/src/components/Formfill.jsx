@@ -78,7 +78,7 @@ const Formfill = ({ setSmokerDrinkerResult, setShowSmokerDrinker }) => {
 
   return (
     <div className={classes["container"]}>
-      <div className={classes["hack-details"]}>
+      <div className={classes["hack-details"]} data-test="formfill-header">
         <h1>Smoke Drink Predictor Details</h1>
       </div>
       <div className={classes["predictor-form"]}>

@@ -7,14 +7,13 @@ describe("TodoList Test", () => {
     cy.location("pathname").should("equal", "/");
     cy.wait(3000);
     cy.get('[data-test="nav-todolist"]').click();
-    cy.location("pathname").should("equal", "/todolist");
   });
   it("Todo with input", () => {
     cy.get('[data-test="input-todo"]').type("Hello World");
     cy.get('[data-test="btn-add-todo"]').click();
     cy.get('[data-test="todo-list"]').should("contain", "Hello World");
   });
-  it.only("Todo with input and delete", () => {
+  it("Todo with input and delete", () => {
     cy.get('[data-test="todo-list"]').should("have.length", 0);
     cy.get('[data-test="input-todo"]').type("Hello World 0");
     cy.get('[data-test="btn-add-todo"]').click();

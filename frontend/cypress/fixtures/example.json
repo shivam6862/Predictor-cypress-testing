@@ -1,5 +1,14 @@
 {
-  "name": "Shivam kumar",
-  "email": "Shivam6862mau@gmail.com",
-  "body": "I'm a software developer passionate about solving complex problems and building elegant solutions. I constantly challenge myself to improve my skills and stay up-to-date with the latest technologies. Additionally, my expertise extends to data analytics and machine learning, with a successful track record in Kaggle competitions."
+  "Todo_works": [
+    "Complete HTML and CSS tutorial",
+    "Build a simple JavaScript app",
+    "Learn Python Flask framework",
+    "Create a basic REST API",
+    "Study scikit-learn for machine learning",
+    "Implement a K-nearest neighbors algorithm",
+    "Deploy a web application on Heroku",
+    "Optimize machine learning model performance",
+    "Explore front-end frameworks like React",
+    "Read a book on software development best practices"
+  ]
 }

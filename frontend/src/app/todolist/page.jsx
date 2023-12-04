@@ -7,11 +7,13 @@ const Page = () => {
   const [todoList, settodoList] = useState([]);
 
   const fetching = async () => {
-    const response = await fetch("http://localhost:3000/api/todolist");
+    const response = await fetch("http://localhost:8501/home");
     const data = await response.json();
     console.log(data);
   };
+
   const postingdata = async () => {
+    await fetching();
     const response = await fetch("http://localhost:3000/api/todolist", {
       method: "POST",
       headers: {
@@ -20,7 +22,18 @@ const Page = () => {
       body: JSON.stringify({ name: "todo" }),
     });
     const data = await response.json();
-    console.log(data);
+
+    const todoWorks = data.Todo_works.slice();
+    let index = 0;
+    const interval = setInterval(() => {
+      if (index < todoWorks.length) {
+        const updatedTodoList = todoWorks.slice(0, index + 1);
+        settodoList(updatedTodoList);
+        index++;
+      } else {
+        clearInterval(interval);
+      }
+    }, 400);
   };
 
   return (
