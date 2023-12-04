@@ -73,6 +73,7 @@
   padding: 2rem;
 }
 .next-btn {
+  all: unset;
   border-radius: 16px;
   border: 0.5px solid #03f;
   padding: 16px 40px;

@@ -30,10 +30,12 @@ const Formfill = ({ setSmokerDrinkerResult, setShowSmokerDrinker }) => {
   const [isAllFieldsFilled, setIsAllFieldsFilled] = useState(
     Array(19).fill(false)
   );
+  const [isloading, setIsLoading] = useState(false);
   const { predictSmokerDrinker } = usePYModels();
   const { NotificationHandler } = useNotification();
 
   const onSubmit = async () => {
+    setIsLoading(true);
     if (
       !smokerDrinkerUserData.sex ||
       !smokerDrinkerUserData.age ||
@@ -60,14 +62,18 @@ const Formfill = ({ setSmokerDrinkerResult, setShowSmokerDrinker }) => {
         const index = Object.keys(smokerDrinkerUserData).indexOf(key);
         updatedIsAllFieldsFilled[index] = value === "";
       });
-      setIsAllFieldsFilled(updatedIsAllFieldsFilled);
-      NotificationHandler("Error", "Please fill all the fields", "Error");
+      setTimeout(() => {
+        setIsAllFieldsFilled(updatedIsAllFieldsFilled);
+        NotificationHandler("Error", "Please fill all the fields", "Error");
+        setIsLoading(false);
+      }, 500);
       return;
     }
     const response = await predictSmokerDrinker(smokerDrinkerUserData);
     console.log(response);
     setSmokerDrinkerResult(response);
     setShowSmokerDrinker(true);
+    setIsLoading(false);
   };
 
   return (
@@ -96,6 +102,7 @@ const Formfill = ({ setSmokerDrinkerResult, setShowSmokerDrinker }) => {
                     >
                       <label htmlFor="defect">{item.label}</label>
                       <input
+                        data-test={`input-box-${item.id}`}
                         type="number"
                         min={0}
                         id={item.id}
@@ -122,8 +129,12 @@ const Formfill = ({ setSmokerDrinkerResult, setShowSmokerDrinker }) => {
         })}
       </div>
       <div className={classes["btn-group"]}>
-        <button className={classes["next-btn"]} onClick={onSubmit}>
-          Predict
+        <button
+          className={classes["next-btn"]}
+          onClick={onSubmit}
+          data-test="predict-button"
+        >
+          {isloading ? "Loading..." : "Predict"}
         </button>
       </div>
     </div>

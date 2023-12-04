@@ -18,5 +18,8 @@
     "react-dom": "^18.2.0",
     "react-icons": "^4.11.0",
     "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "cypress": "^13.6.0"
   }
 }

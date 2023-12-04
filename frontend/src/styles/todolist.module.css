@@ -1,0 +1,88 @@
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 2rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.container > h1 {
+  padding: 0;
+  margin: 0;
+  color: var(--Text);
+  font-size: 2rem;
+  font-weight: bold;
+}
+.input_box {
+  position: relative;
+  width: -webkit-fill-available;
+  padding-bottom: 1rem;
+}
+.input_box > input {
+  all: unset;
+  width: -webkit-fill-available;
+  border: 0.5px solid rgba(0, 0, 0, 0.6);
+  padding: 12px 20px;
+  border-radius: 8px;
+  min-width: 310px;
+  font-size: 16px;
+  font-weight: 700;
+  color: #202020;
+  width: --webkit-fill-available;
+}
+.input_box > input:focus {
+  border: 0.5px solid #03f;
+}
+.input_box > input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+.input_box > button {
+  all: unset;
+  position: absolute;
+  right: 0.1rem;
+  top: 0.1rem;
+  border-radius: 6px;
+  border: 0.5px solid #03f;
+  padding: 0px 10px;
+  background-color: var(--blue-blue, rgb(90, 119, 232));
+  color: #fff;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-transform: uppercase;
+}
+.todolist_items {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-weight: bold;
+}
+.todolist_item {
+  font-size: 1rem;
+  color: var(--Text);
+  font-weight: 500;
+  background-color: rgb(205, 205, 205);
+  border-radius: 6px;
+  padding: 6px;
+  padding-left: 1rem;
+  position: relative;
+}
+.todolist_item > button {
+  all: unset;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  border-radius: 6px;
+  padding: 2px 5px;
+  background-color: rgb(255, 77, 77);
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+}
+.todolist_item > button:hover {
+  background-color: rgb(0, 0, 0);
+  color: #fb5151;
+}

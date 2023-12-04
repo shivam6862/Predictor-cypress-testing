@@ -21,6 +21,8 @@ const logoNotification = {
 
 export const useNotification = () => {
   const notificationCtx = useContext(NotificationContext);
+  console.log("Notification Context:", notificationCtx);
+
   const NotificationHandler = (title, message, status) => {
     const color = backGroundColor[status];
     const logo = logoNotification[status];

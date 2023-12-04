@@ -43,20 +43,27 @@ const Notification = (props) => {
 
   return (
     <div
+      id={props.id}
       onMouseEnter={handlePauseTimer}
       onMouseLeave={handleStartTimer}
       key={props.id}
       className={`${classes.notification}`}
       style={{ background: props.type }}
+      data-test="notification"
     >
-      <div className={classes.box}>
-        <div className={classes.logo}>{props.logo}</div>
-        <div className={classes.content}>
+      <div className={classes.box} data-test="notification-box">
+        <div className={classes.logo} data-test="notification-logo">
+          {props.logo}
+        </div>
+        <div className={classes.content} data-test="notification-content">
           <h1>{props.title}</h1>
           <p>{props.message}</p>
         </div>
-        <div className={classes.buttons}>
-          <button onClick={() => deleteNotification(props.id)}>
+        <div className={classes.buttons} data-test="notification-buttons">
+          <button
+            onClick={() => deleteNotification(props.id)}
+            data-test="notification-button"
+          >
             <RxCross1 />
           </button>
         </div>
@@ -64,6 +71,7 @@ const Notification = (props) => {
       <div
         className={`${classes.lowerProgressbar}`}
         style={{ width: width + "%" }}
+        data-test="notification-progressbar"
       ></div>
     </div>
   );

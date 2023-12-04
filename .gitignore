@@ -8,3 +8,4 @@ frontend/node_modules
 frontend/package-lock.json
 env
 smoking_driking.csv
+frontend/cypress/downloads

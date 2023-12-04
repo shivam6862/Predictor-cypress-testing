@@ -18,3 +18,18 @@
   font-size: 40px;
   font-weight: 500;
 }
+.links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+.links > a {
+  color: #e8b059;
+  font-size: 20px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
